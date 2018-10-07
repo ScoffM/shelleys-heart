@@ -10,5 +10,5 @@ def all_dishes(request):
 
 
 def detail(request, dish_id):
-    detail_dish = get_object_or_404(Menu, pk=dish_id)
-    return render(request, 'menu/details.html', {'spell': detail_dish})
+    dish = get_object_or_404(Menu, pk=dish_id)
+    return render(request, 'menu/details.html', {'dish': dish})

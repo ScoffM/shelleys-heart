@@ -2,6 +2,21 @@
 
 {% block content %}
 
-<h1>It's only fireball</h1>
+<main role="main">
+    <div class="container">
+        <h1 class="text-center pt-3">Our Menu</h1>
+        <br />
+        <br />
+
+        {% for dish in dishes.all %}
+        <a href="{% url 'menu_detail' dish.name %}"><h3>{{ dish.name }}</h3></a>
+        <br />
+        <img class="img-fluid" src="{{ dish.image.url }}" height=200 width=200 />
+        <br />
+        <p>{{ dish.summary }}</p>
+        {% endfor %}
+    </div>
+
+</main>
 
 {% endblock %}

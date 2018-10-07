@@ -13,3 +13,6 @@ class Menu(models.Model):
 
     def __str__(self):
         return self.name
+
+    def summary(self):
+        return self.description[:100]
