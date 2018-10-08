@@ -10,6 +10,8 @@ class Menu(models.Model):
     vegetarian = models.BooleanField()
     gluten_free = models.BooleanField()
     image = models.ImageField()
+    price = models.IntegerField(validators=[MinValueValidator(0)])
+    category = models.CharField(max_length=100)
 
     def __str__(self):
         return self.name
