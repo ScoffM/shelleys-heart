@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <!-- Custom CSS (mostly for paralax)-->
     <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+
 </head>
 
 <body>
@@ -65,5 +66,31 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script>
+        	function carouselNormalization() {
+		var items = $('#main-slider .item'), //grab all slides
+	    	heights = [], //create empty array to store height values
+	    	tallest; //create variable to make note of the tallest slide
+
+		if( ! items.length )
+	    	return;
+
+		function normalizeHeights() {
+			items.each( function() { //add heights to array
+				heights.push( $(this).height() );
+			} );
+			tallest = Math.max.apply( null, heights ); //cache largest value
+			items.css( 'min-height', tallest + 'px' );
+		};
+		normalizeHeights();
+
+		$( window ).on( 'resize orientationchange', function () {
+			tallest = 0, heights.length = 0; //reset vars
+			items.css( 'min-height', '0' ); //reset min-height
+			normalizeHeights(); //run it again
+		} );
+	}
+    </script>
+
 </body>
 </html>
