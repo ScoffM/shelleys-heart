@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'booking.apps.BookingConfig',
+    'boardgames.apps.BoardgamesConfig',
     'events.apps.EventsConfig',
     'menu.apps.MenuConfig',
     'landing.apps.LandingConfig',

@@ -8,7 +8,7 @@
     <meta name="author" content="">
 
 
-    <title>Shelly's Heart</title>
+    <title>Shelley's Heart</title>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -22,8 +22,8 @@
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container">
                 <a class="navbar-brand" href="{% url 'home' %}">
-                    <img src="{% static 'icon.png' %}" height=30 width=30 class="d-inline-block alighn-top" />
-                    Shelly's Heart
+                    <img src="{% static 'icons/Shelley_Light.png' %}" height=50 width=50 class="d-inline-block alighn-top" />
+                    Shelley's Heart
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -31,8 +31,8 @@
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav ml-auto">
                         <a class="nav-item nav-link" href="{% url 'menu' %}">Menu</a>
+                        <a class="nav-item nav-link" href="{% url 'games' %}">Games</a>
                         <a class="nav-item nav-link" href="">Events</a>
-                        <a class="nav-item nav-link" href="">Games</a>
                         <a class="nav-item nav-link" href="{% url 'booking' %}">Booking</a>
             </div>
             </div>
@@ -51,13 +51,10 @@
             <div class="col-6">
                 <a>facebook</a> <br>
                 <a>instagram</a> <br>
-                <a>questions@shellysheart.com</a><br>
+                <a>questions@shelleysheart.com</a><br>
                 <a>33123456788</a><br>
             </div>
             <div class="col-3">Visit Us at New Jersey</div>
-        </div>
-        <div class="container text-center">
-            <p>Copyright {% now "Y" %}; Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></p>
         </div>
     </footer>
     <!-- Bootstrap core JavaScript
@@ -66,31 +63,5 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <script>
-        	function carouselNormalization() {
-		var items = $('#main-slider .item'), //grab all slides
-	    	heights = [], //create empty array to store height values
-	    	tallest; //create variable to make note of the tallest slide
-
-		if( ! items.length )
-	    	return;
-
-		function normalizeHeights() {
-			items.each( function() { //add heights to array
-				heights.push( $(this).height() );
-			} );
-			tallest = Math.max.apply( null, heights ); //cache largest value
-			items.css( 'min-height', tallest + 'px' );
-		};
-		normalizeHeights();
-
-		$( window ).on( 'resize orientationchange', function () {
-			tallest = 0, heights.length = 0; //reset vars
-			items.css( 'min-height', '0' ); //reset min-height
-			normalizeHeights(); //run it again
-		} );
-	}
-    </script>
-
 </body>
 </html>

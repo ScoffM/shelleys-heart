@@ -7,3 +7,4 @@ Pillow==5.3.0
 pytz==2018.5
 wincertstore==0.2
 psycopg2==2.7.2
+heroku config:set WEB_CONCURRENCY=3
