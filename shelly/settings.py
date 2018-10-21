@@ -36,6 +36,7 @@ try:
 except:
     db_from_env = {}
 
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -158,5 +159,7 @@ MEDIA_URL = '/media/'
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
+
 # Activate Django-Heroku.
-django_heroku.settings(locals())
+if db_from_env:
+    django_heroku.settings(locals())
