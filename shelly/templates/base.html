@@ -31,9 +31,10 @@
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav ml-auto">
                         <a class="nav-item nav-link" href="{% url 'menu' %}">Menu</a>
-                        <a class="nav-item nav-link" href="{% url 'games' %}">Games</a>
-                        <a class="nav-item nav-link" href="">Events</a>
-                        <a class="nav-item nav-link" href="{% url 'booking' %}">Booking</a>
+                        <a class="nav-item nav-link" href="{% url 'games' %}">Juegos</a>
+                        <a class="nav-item nav-link" href="">Eventos</a>
+                        <a class="nav-item nav-link" href="{% url 'booking' %}">Reservaciones</a>
+                        <a class="nav-item nav-link" href="{% url 'about' %}">Nosotros</a>
             </div>
             </div>
             </div>
@@ -45,16 +46,20 @@
       {% endblock %}
 
 
-    <footer class="text-muted bg-dark">
+    <footer class="text-muted bg-dark pt-4 pb-5">
         <div class="row">
             <div class="col-3"></div>
-            <div class="col-6">
-                <a>facebook</a> <br>
-                <a>instagram</a> <br>
-                <a>questions@shelleysheart.com</a><br>
-                <a>33123456788</a><br>
+            <div class="col-2">
+                <h4> Contacto</h4>
+                <img src="{% static 'icons/fb.png' %}" height="24px"> <a class="small"> facebook</a> <br>
+                <img src="{% static 'icons/ig.png' %}" height="24px"> <a class="small"> instagram</a> <br>
+                <img src="{% static 'icons/phone.png' %}" height="24px"> <a class="small"> questions@shelleysheart.com</a><br>
+                <img src="{% static 'icons/email.png' %}" height="24px"> <a class="small"> 33123456788</a><br>
             </div>
-            <div class="col-3">Visit Us at New Jersey</div>
+            <div class="col-2">
+                <h4> Horario </h4>
+                Blah
+            </div>
         </div>
     </footer>
     <!-- Bootstrap core JavaScript

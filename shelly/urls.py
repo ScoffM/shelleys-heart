@@ -24,6 +24,7 @@ import landing.views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', landing.views.home, name='home'),
+    path('about', landing.views.about, name='about'),
     path('booking/', include('booking.urls')),
     path('events/', include('events.urls')),
     path('menu/', include('menu.urls')),
