@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 
 import os
 import django_heroku
+import dj_database_url
+
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -22,10 +24,17 @@ PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'rff$e-ihi19)-19rgv5zqvm8&^3xr-%w-2y1_6c-#kc$oq(9x2'
-PASSWORD = os.environ["PASSWORD"]
+
+try:
+    PASSWORD = os.environ["PASSWORD"]
+except:
+    PASSWORD = "Django1234"
 SECRET_KEY = os.environ["SECRET_KEY"].strip('"')
 DATABASE_URL = os.environ["DATABASE_URL"]
+try:
+    db_from_env = dj_database_url.config()
+except:
+    db_from_env = {}
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -84,16 +93,21 @@ WSGI_APPLICATION = 'shelly.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': "shelleydb",
-        'USER': "postgres",
-        'PASSWORD': PASSWORD,
-        'HOST': DATABASE_URL,
-        'PORT': '5432',
+DATABASES = {}
+
+if not db_from_env:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': "shelleydb",
+            'USER': "postgres",
+            'PASSWORD': PASSWORD,
+            'HOST': DATABASE_URL,
+            'PORT': '5432',
+        }
     }
-}
+else:
+    DATABASES["default"] = db_from_env
 
 
 # Password validation
