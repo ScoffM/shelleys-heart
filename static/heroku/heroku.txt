@@ -1,0 +1,1 @@
+This file is here in order to help heroku collect my static files

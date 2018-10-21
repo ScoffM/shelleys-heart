@@ -1,12 +1,16 @@
 from django.shortcuts import render
 from django.shortcuts import get_object_or_404
+from django.contrib.auth.models import User
+
+users = User.objects.all()
+
 
 from .models import Game
 
 
 def all_games(request):
     games = Game.objects
-    return render(request, 'boardgames/all.html', {'games': games})
+    return render(request, 'boardgames/all.html', {'games': games, 'users': users})
 
 
 def detail(request, game_id):

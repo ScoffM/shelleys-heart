@@ -22,7 +22,10 @@ PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'xj_l#e48i=i4h_f530gl)%!oiv_*n-bybztd(z04lsiwzjvmi#'
+SECRET_KEY = 'rff$e-ihi19)-19rgv5zqvm8&^3xr-%w-2y1_6c-#kc$oq(9x2'
+PASSWORD = os.environ["PASSWORD"]
+SECRET_KEY = os.environ["SECRET_KEY"].strip('"')
+DATABASE_URL = os.environ["DATABASE_URL"]
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -83,8 +86,12 @@ WSGI_APPLICATION = 'shelly.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': "shelleydb",
+        'USER': "postgres",
+        'PASSWORD': PASSWORD,
+        'HOST': DATABASE_URL,
+        'PORT': '5432',
     }
 }
 
