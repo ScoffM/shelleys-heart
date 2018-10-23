@@ -5,7 +5,11 @@ from .models import Game
 
 def all_games(request):
     games = Game.objects
-    return render(request, 'boardgames/all.html', {'games': games})
+    p2 = [game for game in games.all() if game.players == 2]
+    p3 = [game for game in games.all() if game.players == 3]
+    p4 = [game for game in games.all() if game.players == 4]
+
+    return render(request, 'boardgames/all.html', {'player2': p2, 'player3': p3, 'player4': p4})
 
 
 def detail(request, game_id):
