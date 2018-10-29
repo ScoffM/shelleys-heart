@@ -76,13 +76,43 @@
 }
 
 
-/* Fix Pill color
+/* Custom colors for Client
 -------------------------------------------------- */
 
 .bg-dark {
-
     background-color: #303030 !important;
+}
+
+.bg-secondary {
+    background-color: #d8c8a1 !important;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: rgba(255,255,255,1);
+}
+
+.text-muted {
+    color: white !important;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+
+    color: #fff;
+    background-color: #d03221;
 
 }
 
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
 
+    color: #fff;
+    background-color: #d03221;
+
+}
+
+a {
+    color: #d03221;
+}
+
+a:hover{
+    color: #ff4530;
+}

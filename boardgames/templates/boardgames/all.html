@@ -2,10 +2,10 @@
 
 {% block content %}
 
-<main role="main" class="bg-dark">
+<main role="main" class="bg-dark text-muted">
 
 
-    <div class="container bg-light">
+    <div class="container bg-secondary text-muted">
         <h1 class="text-center pt-3">Our Games</h1>
 
         <ul class="nav nav-pills nav-justified red" id="pills-tab" role="tablist">
@@ -31,6 +31,7 @@
                 <p> Players: {{ game.players }}</p>
                 <p>{{ game.summary }}</p>
                 {% endfor %}
+                <br />
             </div>
             <div class="tab-pane fade" id="pills-3p" role="tabpanel" aria-labelledby="pills-3p-tab">
                 {% for game in player3 %}
@@ -41,6 +42,7 @@
                 <p> Players: {{ game.players }}</p>
                 <p>{{ game.summary }}</p>
                 {% endfor %}
+                <br />
             </div>
             <div class="tab-pane fade" id="pills-4p" role="tabpanel" aria-labelledby="pills-4p-tab">
                 {% for game in player4 %}
@@ -51,10 +53,10 @@
                 <p> Players: {{ game.players }}</p>
                 <p>{{ game.summary }}</p>
                 {% endfor %}
+                <br />
             </div>
         </div>
     </div>
-
 
 </main>
 {% endblock %}
