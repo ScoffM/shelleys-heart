@@ -8,7 +8,7 @@
     <div class="container bg-light">
         <h1 class="text-center pt-3">Our Games</h1>
 
-        <ul class="nav nav-pills nav-justified" id="pills-tab" role="tablist">
+        <ul class="nav nav-pills nav-justified red" id="pills-tab" role="tablist">
             <li class="nav-item">
                 <a class="nav-link active" id="pills-2p-tab" data-toggle="pill" href="#pills-2p" role="tab" aria-controls="pills-home" aria-selected="true">2 Jugadores</a>
             </li>
@@ -53,43 +53,6 @@
                 {% endfor %}
             </div>
         </div>
-
-
-
-
-
-<!--        <ul class="nav nav-tabs">
-          <li class="active"> <a data-toggle="tab" href="#menu0">Home</a></li>
-          <li><a data-toggle="tab" href="#menu1">Menu 1</a></li>
-          <li><a data-toggle="tab" href="#menu2">Menu 2</a></li>
-        </ul>
-
-        <div class="tab-content">
-          <div id="menu0" class="tab-pane fade active">
-            <h3>HOME</h3>
-            <p>Some content.</p>
-          </div>
-          <div id="menu1" class="tab-pane fade">
-            <h3>Menu 1</h3>
-            <p>Some content in menu 1.</p>
-          </div>
-          <div id="menu2" class="tab-pane fade">
-            <h3>Menu 2</h3>
-            <p>Some content in menu 2.</p>
-          </div>
-        </div>-->
-
-
-        <!--
-        {% for game in games.all %}
-        <a href="{% url 'game_detail' game.name %}"><h3>{{ game.name }}</h3></a>
-        <br />
-        <img class="img-fluid" src="{{ game.image.url }}" height=200 width=200 />
-        <br />
-        <p> Players: {{ game.players }}</p>
-        <p>{{ game.summary }}</p>
-        {% endfor %}
-        -->
     </div>
 
 
