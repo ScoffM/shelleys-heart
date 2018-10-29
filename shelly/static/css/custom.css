@@ -84,7 +84,7 @@
 }
 
 .bg-secondary {
-    background-color: #d8c8a1 !important;
+    background-color: white !important;
 }
 
 .navbar-dark .navbar-nav .nav-link {
@@ -109,6 +109,11 @@
 
 }
 
+.text-secondary {
+
+    color: #d03221 !important;
+
+}
 a {
     color: #d03221;
 }
