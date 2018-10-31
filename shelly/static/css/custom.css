@@ -121,3 +121,25 @@ a {
 a:hover{
     color: #ff4530;
 }
+
+.btn-primary {
+
+    color: #fff;
+    background-color: #d03221;
+    border-color: #d03221;
+
+}
+
+.btn-primary:hover{
+
+    color: #d03221;
+    background-color: transparent;
+    border-color: #d03221;
+
+}
+
+.bg-danger {
+
+    background-color: #d03221 !important;
+
+}

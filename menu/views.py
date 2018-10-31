@@ -12,3 +12,7 @@ def all_dishes(request):
 def detail(request, dish_id):
     dish = get_object_or_404(Menu, pk=dish_id)
     return render(request, 'menu/details.html', {'dish': dish})
+
+
+def static_menu(request):
+    return render(request, 'menu/static_menu.html')
