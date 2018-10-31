@@ -114,8 +114,13 @@
     color: #d03221 !important;
 
 }
+
 a {
     color: #d03221;
+}
+
+.footer_links {
+    color: white;
 }
 
 a:hover{
@@ -135,7 +140,6 @@ a:hover{
     color: #d03221;
     background-color: transparent;
     border-color: #d03221;
-
 }
 
 .bg-danger {
