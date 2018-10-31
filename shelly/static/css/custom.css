@@ -143,3 +143,11 @@ a:hover{
     background-color: #d03221 !important;
 
 }
+
+body {
+  font-family: 'Oswald', cursive; !important;
+}
+
+#menu_bg{
+    background-color: #e7dfc6;
+}
