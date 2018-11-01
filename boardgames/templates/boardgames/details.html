@@ -3,16 +3,26 @@
 {% block content %}
 
 <main role="main">
+    <br>
     <div class="container">
         <h1 class="text-center pt-3">{{ game.name }}</h1>
-        <h3> Categoría de Juego: {{ game.category }}</h3>
-        <h3> Jugadores Recomendados: {{ game.players }}</h3>
-        <h3> Inventario de Préstamo: {{ game.stock }}</h3>
-        <h3> Tiempo de Juego: {{ game.playtime }}</h3>
-        <img class="img-fluid" src="{{ game.image.url }}"  />
+        <br>
+        <div class="row">
+            <div class="col">
+                <img class="img-fluid" src="{{ game.image.url }}"  />
+            </div>
+            <div class="col">
+                <h5> Categoría de Juego: {{ game.category }}</h5>
+                <h5> Jugadores Recomendados: {{ game.players }}</h5>
+                <h5> Inventario de Préstamo: {{ game.stock }}</h5>
+                <h5> Tiempo de Juego: {{ game.playtime }}</h5>
+                <br>
+                <p>{{ game.description }}</p>
+            </div>
+        </div>
         <br />
         <br />
-        <p>{{ game.description }}</p>
+
     </div>
 </main>
 

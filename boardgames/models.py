@@ -16,4 +16,7 @@ class Game(models.Model):
         return self.name
 
     def summary(self):
-        return self.description[:100]+"..."
+        first_stop = self.description[:50].rfind(" ")
+        return_value = self.description[:first_stop] + "..."
+        print(return_value)
+        return return_value
